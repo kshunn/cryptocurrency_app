@@ -11,9 +11,18 @@ export default class extends React.Component {
   state = {
     isLoading: true
   };
-
+  getData = async() => {
+    const {
+      data: {
+        data
+      }
+    } = await axios.get(
+      `https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=10&convert=USD&CMC_PRO_API_KEY=${API_KEY}`
+    );
+    this.setState({isLoading: false, data});
+  }; //requires name, abbreviated name, current value, change during 24h / 7d
   render(){
-    const { isLoading } = this.state;
+    const { isLoading, data } = this.state;
     return (
       isLoading ? (
         <View style={styles.container}>
@@ -23,10 +32,13 @@ export default class extends React.Component {
       ) : (
         <View style={styles.container}>
           <Header />
-          <Data />
+          <Data data={data}/>
         </View>
       )
     );
+  }
+  componentDidMount(){
+    this.getData();
   }
 }
 
