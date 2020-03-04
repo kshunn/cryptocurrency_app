@@ -2,13 +2,25 @@ import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
 import PropTypes from 'prop-types';
 
+const iconSelector = {
+    BTC: require('../icons/btc.png'),
+    ETH: require('../icons/eth.png'),
+    XRP: require('../icons/xrp.png'),
+    BCH: require('../icons/bch.png'),
+    USDT: require('../icons/usdt.png'),
+    BSV: require('../icons/bsv.png'),
+    LTC: require('../icons/ltc.png'),
+    EOS: require('../icons/eos.png'),
+    BNB: require('../icons/bnb.png'),
+    XTZ: require('../icons/xtz.png'),
+}
 
 export default function Coin({name, symbol, price, change_24h, change_7d}){ 
     return (
         <View style={styles.content}>
             <View style={styles.name_price}>
                 <View style={styles.iconContainer}>
-                    <Image source={require('../icons/btc.png')} style={styles.icon} />
+                    <Image source={iconSelector[symbol]} style={styles.icon} />
                 </View>
                 <View style={styles.half_name}>
                     <Text style={styles.boldText}>{symbol}</Text>
