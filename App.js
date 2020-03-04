@@ -33,8 +33,9 @@ export default class extends React.Component {
   }; //requires name, abbreviated name, current value, change during 24h / 7d
   render(){
     const { isLoading, isFontLoading, data } = this.state;
+    if(isFontLoading) return null;
     return (
-      (isLoading || isFontLoading) ? (
+      (isLoading) ? (
         <View style={styles.container}>
           <Header />
           <Loading />
