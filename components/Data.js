@@ -16,9 +16,9 @@ export default function Data({data}){
                     key={coin.id}
                     name={coin.name}
                     symbol={coin.symbol}
-                    price={coin.quote.USD.price}
-                    change_24h={coin.quote.USD.percent_change_24h}
-                    change_7d={coin.quote.USD.percent_change_7d}
+                    price={Number(coin.quote.USD.price.toFixed(2))}
+                    change_24h={Number(coin.quote.USD.percent_change_24h.toFixed(2))}
+                    change_7d={Number(coin.quote.USD.percent_change_7d.toFixed(2))}
                     />
                 ))}
             </ScrollView>
@@ -29,7 +29,6 @@ export default function Data({data}){
 const styles = StyleSheet.create({
     container: {
         flex: 5,
-        borderWidth: 2,
         alignSelf: 'stretch'
     },
     containerText: {
