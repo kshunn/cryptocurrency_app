@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import axios from 'axios';
 import Header from './components/Header';
 import Loading from './components/Loading';
@@ -31,7 +31,7 @@ export default class extends React.Component {
         </View>
       ) : (
         <View style={styles.container}>
-          <Header />
+          <Header/>
           <Data data={data}/>
         </View>
       )
@@ -44,8 +44,8 @@ export default class extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',      
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',      
   }
 })
