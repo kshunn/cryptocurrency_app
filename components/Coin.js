@@ -1,16 +1,20 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
 import PropTypes from 'prop-types';
 
-export default function Coin({name, symbol, price, change_24h, change_7d}){
+
+export default function Coin({name, symbol, price, change_24h, change_7d}){ 
     return (
         <View style={styles.content}>
             <View style={styles.name_price}>
-                <View style={styles.half_name_price}>
+                <View style={styles.iconContainer}>
+                    <Image source={require('../icons/btc.png')} style={styles.icon} />
+                </View>
+                <View style={styles.half_name}>
                     <Text style={styles.boldText}>{symbol}</Text>
                     <Text style={styles.normalText}> | {name}</Text>
                 </View>
-                <View style={styles.half_name_price}>
+                <View style={styles.half_price}>
                     <Text style={styles.boldText}>{price} $</Text>
                 </View>
             </View>
@@ -50,7 +54,6 @@ const styles = StyleSheet.create({
         alignSelf: 'stretch',
         alignItems: 'center',
         justifyContent: 'center',
-        paddingVertical: 20,
         borderBottomWidth: 1,
         borderBottomColor: '#ecf0f1'
     },
@@ -63,12 +66,36 @@ const styles = StyleSheet.create({
         paddingHorizontal: 30,
         paddingVertical: 20,
     },
-    half_name_price: {
+    icon: {
         flex: 1,
+        resizeMode: 'contain',
+        height: '100%'
+    },
+    iconContainer: {
+        flex: 2,
         flexDirection: 'row',
         alignSelf: 'stretch',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginLeft: 10,
+        padding: 10,
+    },
+    half_name: {
+        flex: 4,
+        flexDirection: 'row',
+        alignSelf: 'stretch',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        paddingVertical: 20,
+    },
+    half_price: {
+        flex: 4,
+        flexDirection: 'row',
+        alignSelf: 'stretch',
+        justifyContent: 'flex-end',
+        paddingRight: 40,
+        alignItems: 'center',
+        paddingVertical: 20,
     },
     half_change: {
         flex: 1,
