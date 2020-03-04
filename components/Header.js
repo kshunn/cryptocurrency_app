@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
         padding: 5,
     },
     headerText: {
-        fontWeight: '700',
-        fontSize: 24
+        fontSize: 24,
+        fontFamily: 'montserrat-bold'
     }
 })

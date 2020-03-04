@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'  
     },
     containerText: {
-        fontWeight: '500',
-        fontSize: 24
+        fontSize: 24,
+        fontFamily: 'montserrat-bold'
     }
 })

@@ -117,20 +117,20 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     normalText: {
-        fontWeight: '300',
+        fontFamily: 'montserrat-regular',
         fontSize: 16
     },
     boldText: {
-        fontWeight: '800',
+        fontFamily: 'montserrat-bold',
         fontSize: 16
     },
     blueText: {
-        fontWeight: '500',
+        fontFamily: 'montserrat-medium',
         fontSize: 16,
         color: '#17c0eb'
     },
     redText: {
-        fontWeight: '500',
+        fontFamily: 'montserrat-medium',
         fontSize: 16,
         color: '#eb2f06'
     },
